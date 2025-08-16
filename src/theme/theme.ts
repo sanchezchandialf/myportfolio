@@ -1,8 +1,8 @@
-import { createTheme } from '@mui/material/styles';
+import type { ThemeOptions } from '@mui/material/styles';
 
-const theme = createTheme({
+export const getDesignTokens = (mode: 'light' | 'dark'): ThemeOptions => ({
   palette: {
-    mode: 'light',
+    mode,
     primary: {
       main: '#000000',
     },
@@ -14,5 +14,3 @@ const theme = createTheme({
     fontFamily: ['Inter', 'Roboto', 'sans-serif'].join(','),
   },
 });
-
-export default theme;

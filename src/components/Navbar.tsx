@@ -1,7 +1,6 @@
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
 import Box from '@mui/material/Box';
 
 const Navbar = () => (
@@ -16,12 +15,20 @@ const Navbar = () => (
         Mi Portfolio
       </Typography>
       <Box sx={{ display: 'flex', gap: 2 }}>
-        <Link href="#proyectos" color="inherit" underline="none">
+        <Typography
+          component="a"
+          href="#projects"
+          sx={{ color: 'inherit', textDecoration: 'none' }}
+        >
           Proyectos
-        </Link>
-        <Link href="#contacto" color="inherit" underline="none">
+        </Typography>
+        <Typography
+          component="a"
+          href="#contact"
+          sx={{ color: 'inherit', textDecoration: 'none' }}
+        >
           Contacto
-        </Link>
+        </Typography>
       </Box>
     </Toolbar>
   </AppBar>

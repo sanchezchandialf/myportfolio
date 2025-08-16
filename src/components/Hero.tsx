@@ -3,7 +3,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
 const Hero = () => (
-  <Box sx={{ textAlign: 'center', py: { xs: 4, md: 8 }, px: 2 }}>
+  <Box id="hero" sx={{ textAlign: 'center', py: { xs: 4, md: 8 }, px: 2 }}>
     <Typography
       variant="h2"
       component="h1"

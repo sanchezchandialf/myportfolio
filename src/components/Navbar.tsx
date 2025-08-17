@@ -9,6 +9,11 @@ import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import { ColorModeContext } from '../theme/ColorModeContext';
 
+const navLinks = [
+  { href: '#projects', label: 'Proyectos' },
+  { href: '#contact', label: 'Contacto' },
+];
+
 const Navbar = () => {
   const theme = useTheme();
   const colorMode = useContext(ColorModeContext);
@@ -24,20 +29,16 @@ const Navbar = () => {
           Mi Portfolio
         </Typography>
         <Box sx={{ display: 'flex', gap: 2, alignItems: 'center' }}>
-          <Typography
-            component="a"
-            href="#projects"
-            sx={{ color: 'inherit', textDecoration: 'none' }}
-          >
-            Proyectos
-          </Typography>
-          <Typography
-            component="a"
-            href="#contact"
-            sx={{ color: 'inherit', textDecoration: 'none' }}
-          >
-            Contacto
-          </Typography>
+          {navLinks.map(({ href, label }) => (
+            <Typography
+              key={href}
+              component="a"
+              href={href}
+              sx={{ color: 'inherit', textDecoration: 'none' }}
+            >
+              {label}
+            </Typography>
+          ))}
           <IconButton
             onClick={colorMode.toggleColorMode}
             color="inherit"

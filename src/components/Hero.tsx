@@ -7,6 +7,7 @@ const Hero = () => (
   <Box
     id="hero"
     sx={(theme) => ({
+      height: '100vh',
       textAlign: 'center',
       py: { xs: 4, md: 8 },
       px: 2,

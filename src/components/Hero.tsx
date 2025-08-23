@@ -4,7 +4,15 @@ import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 
 const Hero = () => (
-  <Box id="hero" sx={{ textAlign: 'center', py: { xs: 4, md: 8 }, px: 2 }}>
+  <Box
+    id="hero"
+    sx={(theme) => ({
+      textAlign: 'center',
+      py: { xs: 4, md: 8 },
+      px: 2,
+      backgroundColor: theme.palette.background.paper,
+    })}
+  >
     <Typography
       variant="h2"
       component="h1"

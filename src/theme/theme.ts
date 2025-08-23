@@ -9,7 +9,7 @@ export const getDesignTokens = (mode: 'light' | 'dark'): ThemeOptions => ({
           secondary: { main: '#ff4081' },
           background: {
             default: '#f0f2f5',
-            paper: '#ffffff',
+            paper: '#e3e7ec',
           },
           text: {
             primary: '#1e1e1e',

@@ -1,39 +1,55 @@
-import Card from '@mui/material/Card';
-import CardMedia from '@mui/material/CardMedia';
-import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
+import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
+import { motion } from 'framer-motion';
 
 interface ProjectCardProps {
   title: string;
   description: string;
   image: string;
-  github: string;
-  demo: string;
+  url: string;
+  isReversed?: boolean;
 }
 
-const ProjectCard = ({ title, description, image, github, demo }: ProjectCardProps) => (
-  <Card>
-    <CardMedia component="img" height="140" image={image} alt={title} />
-    <CardContent>
-      <Typography gutterBottom variant="h5" component="div">
+const ProjectCard = ({ title, description, image, url, isReversed = false }: ProjectCardProps) => (
+  <Grid
+    container
+    spacing={4}
+    direction={isReversed ? 'row-reverse' : 'row'}
+    alignItems="center"
+    component={motion.div}
+    initial={{ opacity: 0, x: isReversed ? 50 : -50 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.5 }}
+    viewport={{ once: true }}
+    sx={{ my: 4 }}
+  >
+    <Grid item xs={12} md={6}>
+      <Box
+        component="img"
+        src={image}
+        alt={title}
+        sx={{ width: '100%', borderRadius: 2 }}
+      />
+    </Grid>
+    <Grid item xs={12} md={6}>
+      <Typography variant="h5" gutterBottom>
         {title}
       </Typography>
-      <Typography variant="body2" color="text.secondary">
+      <Typography variant="body1" color="text.secondary" paragraph>
         {description}
       </Typography>
-    </CardContent>
-    <CardActions>
-      <Button size="small" href={github} target="_blank" rel="noopener noreferrer">
-        GitHub
+      <Button
+        variant="contained"
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        VIEW PROJECT
       </Button>
-      <Button size="small" href={demo} target="_blank" rel="noopener noreferrer">
-        Demo
-      </Button>
-    </CardActions>
-  </Card>
+    </Grid>
+  </Grid>
 );
 
 export default ProjectCard;
-

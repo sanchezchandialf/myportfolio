@@ -1,17 +1,19 @@
 import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
+import Container from '@mui/material/Container';
 import projects from '../data/projects';
 import ProjectCard from './ProjectCard';
 
 const Projects = () => (
-  <Box id="projects" sx={{ p: 4 }}>
-    <Grid container spacing={2} justifyContent="center">
-      {projects.map((project) => (
-        <Grid item key={project.title} xs={12} sm={6} md={4}>
-          <ProjectCard {...project} />
-        </Grid>
+  <Box id="projects" sx={{ py: 10 }}>
+    <Container maxWidth="lg">
+      {projects.map((project, index) => (
+        <ProjectCard
+          key={project.title}
+          {...project}
+          isReversed={index % 2 === 1}
+        />
       ))}
-    </Grid>
+    </Container>
   </Box>
 );
 

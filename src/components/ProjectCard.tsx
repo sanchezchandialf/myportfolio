@@ -17,6 +17,7 @@ const ProjectCard = ({ title, description, image, url, isReversed = false }: Pro
     container
     spacing={4}
     direction={isReversed ? 'row-reverse' : 'row'}
+    justifyContent="center"
     alignItems="center"
     component={motion.div}
     initial={{ opacity: 0, x: isReversed ? 50 : -50 }}

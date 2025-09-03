@@ -83,7 +83,7 @@ const About = () => (
         </Grid>
       </Grid>
     </Container>
-    <Box mt={8} />
+    <Box mt={5} />
   </Box>
 );
 

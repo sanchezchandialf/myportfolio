@@ -38,7 +38,7 @@ const ProjectCard = ({ title, description, image, url, isReversed = false }: Pro
       <Typography variant="h5" gutterBottom>
         {title}
       </Typography>
-      <Typography variant="body1" color="text.secondary" paragraph>
+      <Typography variant="body1" paragraph>
         {description}
       </Typography>
       <Button

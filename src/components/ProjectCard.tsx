@@ -15,7 +15,7 @@ interface ProjectCardProps {
 const ProjectCard = ({ title, description, image, url, isReversed = false }: ProjectCardProps) => (
   <Grid
     container
-    spacing={4}
+    spacing={2}
     direction={isReversed ? 'row-reverse' : 'row'}
     justifyContent="center"
     alignItems="center"

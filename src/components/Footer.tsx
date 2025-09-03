@@ -1,37 +1,29 @@
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import EmailIcon from '@mui/icons-material/Email';
+import { useTheme } from '@mui/material/styles';
 
-const Footer = () => (
-  <Box component="footer" sx={{ textAlign: 'center', py: 2 }}>
-    <Typography variant="body2" color="text.secondary" gutterBottom>
-      © {new Date().getFullYear()} Mi Portfolio
-    </Typography>
-    <Box sx={{ display: 'flex', justifyContent: 'center', gap: 1 }}>
-      <IconButton
-        href="https://github.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="GitHub"
-      >
-        <GitHubIcon />
-      </IconButton>
-      <IconButton
-        href="https://linkedin.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="LinkedIn"
-      >
-        <LinkedInIcon />
-      </IconButton>
-      <IconButton href="mailto:example@example.com" aria-label="Email">
-        <EmailIcon />
-      </IconButton>
+const Footer = () => {
+  const theme = useTheme();
+
+  return (
+    <Box
+      component="footer"
+      sx={{
+        textAlign: 'center',
+        py: 2,
+        backgroundColor:
+          theme.palette.mode === 'dark' ? '#121212' : '#f7f9fc',
+        color: theme.palette.mode === 'dark' ? '#f1f1f1' : 'inherit',
+      }}
+    >
+      <Typography variant="body2">
+        © {new Date().getFullYear()} Mi Portfolio
+      </Typography>
+      <Typography variant="body2">
+        Built with React, TypeScript, and Material UI.
+      </Typography>
     </Box>
-  </Box>
-);
+  );
+};
 
 export default Footer;

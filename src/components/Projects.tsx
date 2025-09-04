@@ -1,7 +1,9 @@
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Divider from '@mui/material/Divider';
+import Typography from '@mui/material/Typography';
 import { useTheme } from '@mui/material/styles';
+import { motion } from 'framer-motion';
 import projects from '../data/projects';
 import ProjectCard from './ProjectCard';
 
@@ -21,6 +23,17 @@ const Projects = () => {
         }}
       >
         <Container maxWidth="lg">
+          <Box mb={4} display="flex" justifyContent="center">
+            <Typography
+              component={motion.div}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: [0, 1, 0] }}
+              transition={{ repeat: Infinity, duration: 2 }}
+              align="center"
+            >
+              ↓ Keep Scrolling ↓
+            </Typography>
+          </Box>
           {projects.map((project, index) => (
             <Box key={project.title} mb={4}>
               <ProjectCard {...project} isReversed={index % 2 === 1} />
